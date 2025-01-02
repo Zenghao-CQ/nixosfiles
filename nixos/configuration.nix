@@ -50,6 +50,26 @@
   # };
 
 
+  # font
+  
+  fonts.fonts = with pkgs; [
+    # 基础字体包
+    noto-fonts
+    noto-fonts-cjk-sans    # 中日韩字体
+    noto-fonts-emoji  # emoji表情
+    nerdfonts    
+    twemoji-color-font
+    fira-code
+    fira-code-symbols
+    # 其他常用字体
+    fira-code         # 编程字体
+    source-han-sans   # 思源黑体
+    source-han-serif  # 思源宋体
+  ];
+ 
+ 
+
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true; 
 
@@ -100,6 +120,13 @@
       git
   ];
 
+  services.xserver.displayManager = {
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -147,6 +174,7 @@
       # the default public key of cache.nixos.org, it's built-in, no need to add it here
       # "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     # ];
+  
   };
   nixpkgs.config.allowUnfree = true;
 

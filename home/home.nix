@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
+  imports = [ ./programs ./themes ];
   home.username = "alex";
   home.homeDirectory = "/home/alex";
   # 也可以在这里ln文件到用户目录，或者直接text写文件到用户目录
@@ -8,19 +9,60 @@
   # 建议将所有 GUI 软件，以及与 OS 关系不大的 CLI 软件，都通过 home.packages 
   home.packages = with pkgs;[
     fastfetch
+    firefox
+    vscode
+    # zsh
     zsh-powerlevel10k
     zsh-z
+    # hyprland
+    #waybar
+    rofi
+    dunst
+    bibata-cursors
+    tokyo-night-gtk
+    #libsForQt5.qt5.qtwayland
+    #kdePackages.qtwayland
+    #xwayland
   ];
   home.stateVersion = "24.11";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.fzf.enable = true;
+  # Install hyprland
+  programs.kitty.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    
+    # hyprland的具体配置
+    extraConfig = ''
+      # 在这里添加hyprland的配置
+      monitor=,preferred,auto,auto
+      
+      $mainMod = SUPER
+      bind = $mainMod, F, fullscreen,
+
+      # 设置一些基本按键绑定
+      bind = $mainMod,Return,exec,kitty
+      bind = $mainMod,Q,killactive,
+      bind = $mainMod,M,exit,
+      #bind = $mainMod,L,exec,firefox 
+      bind = $mainMod, D, exec, rofi -show drun -show-icons # 应用程序启动器
+      bind = $mainMod, R, exec, rofi -show run
+
+      exec-once = dunst
+
+      # exec = pkill waybar & sleep 0.5 && waybar
+      exec-once = waybar
+
+    '';
+  };
+
   programs.git = {
     enable = true;
     userName = "Hao Zeng";
     userEmail = "zenghao-cq@pku.edu.cn";
   };
   # zsh
+  programs.fzf.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
