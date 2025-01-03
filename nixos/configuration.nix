@@ -45,6 +45,15 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+      fcitx5-chinese-addons
+    ];
+  };
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -120,6 +129,12 @@
       wget
       git
   ];
+
+  environment.variables = {
+    GTK_IN_MODULE = "fcitx";
+    QT_IN_MODULE = "fcitx";
+    XMOODIFIER = "@im=fcitx";
+  };
 
   services.xserver.displayManager = {
     sddm = {

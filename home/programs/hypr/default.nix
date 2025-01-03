@@ -18,7 +18,12 @@
       source = /home/alex/.config/hypr/colors
       # exec = pkill waybar & sleep 0.5 && waybar
       exec-once = swww init & sleep 0.5 && exec wallpaper_random
-      
+
+      # fcitx
+      windowrule = pseudo, fcitx
+      exec-once=fcitx5 -d -r
+      exec-once=fcitx5-remote -r        
+ 
       # Input config
       input {
           # kb_layout = br,us
@@ -30,7 +35,7 @@
           follow_mouse = 1
 
           touchpad {
-              natural_scroll = false
+              natural_scroll = true
           }
 
           sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
