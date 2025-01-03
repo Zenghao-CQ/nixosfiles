@@ -3,7 +3,7 @@
     #./dunst
     ./hypr
     #./kitty
-    #./rofi
+    ./rofi
     ./waybar
     ./zsh
   ];

@@ -23,6 +23,7 @@
     rofi
     dunst
     cava
+    swww
     bibata-cursors
     tokyo-night-gtk
     #libsForQt5.qt5.qtwayland
