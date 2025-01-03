@@ -15,14 +15,13 @@
     firefox
     vscode
     dconf
-    # zsh
     zsh-powerlevel10k
     zsh-z
     # hyprland
-    #waybar
+    # waybar
     rofi
     dunst
-    # theme
+    cava
     bibata-cursors
     tokyo-night-gtk
     #libsForQt5.qt5.qtwayland
@@ -31,33 +30,6 @@
   home.stateVersion = "24.11";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # Hyprland
-  programs.kitty.enable = true;
-  wayland.windowManager.hyprland = {
-    enable = true;
-    
-    # hyprland的具体配置
-    extraConfig = ''
-      # 在这里添加hyprland的配置
-      monitor=,preferred,auto,auto
-      
-      $mainMod = SUPER
-      bind = $mainMod, F, fullscreen,
-
-      # 设置一些基本按键绑定
-      bind = $mainMod,Return,exec,kitty
-      bind = $mainMod,Q,killactive,
-      bind = $mainMod,M,exit,
-      #bind = $mainMod,L,exec,firefox 
-      bind = $mainMod, D, exec, rofi -show drun -show-icons # 应用程序启动器
-      bind = $mainMod, R, exec, rofi -show run
-
-      exec-once = dunst
-      exec-once = waybar
-
-    '';
-  };
-  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.git = {
     enable = true;

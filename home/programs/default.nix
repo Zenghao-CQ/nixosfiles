@@ -1,7 +1,7 @@
 {
   imports = [
     #./dunst
-    #./hypr
+    ./hypr
     #./kitty
     #./rofi
     ./waybar
