@@ -1,6 +1,9 @@
 { config, pkgs, inputs, ... }:
 {
-  imports = [ ./programs ./themes ];
+  imports = [ 
+    ./programs
+    ./themes 
+  ];
   home.username = "alex";
   home.homeDirectory = "/home/alex";
   # 也可以在这里ln文件到用户目录，或者直接text写文件到用户目录
@@ -60,35 +63,5 @@
     enable = true;
     userName = "Hao Zeng";
     userEmail = "zenghao-cq@pku.edu.cn";
-  };
-  # zsh
-  programs.fzf.enable = true;
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      ll = "ls -alF";
-    };
-    #initExtra = ''
-    #  [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
-    #'';
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "powerlevel10k-config";
-        src = ./p10k-config;
-        file = "p10k.zsh";
-      }
-      {
-        name = "zsh-z";
-        src = "${pkgs.zsh-z}/share/zsh-z";
-      }
-    ];
   };
 }
