@@ -24,12 +24,11 @@
     tokyo-night-gtk
     #libsForQt5.qt5.qtwayland
     #kdePackages.qtwayland
-    #xwayland
   ];
   home.stateVersion = "24.11";
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # Install hyprland
+  # Hyprland
   programs.kitty.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -51,12 +50,11 @@
       bind = $mainMod, R, exec, rofi -show run
 
       exec-once = dunst
-
-      # exec = pkill waybar & sleep 0.5 && waybar
       exec-once = waybar
 
     '';
   };
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.git = {
     enable = true;
