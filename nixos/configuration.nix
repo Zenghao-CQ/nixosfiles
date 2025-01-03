@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Dynamic libraries
+      ./ld.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -22,7 +24,7 @@
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # gc /nix/store
+  # Gc /nix/store
   nix.gc = {
     automatic = true;
     dates = "weekly"; # 或者其他 systemd.time 格式的时间
@@ -112,8 +114,6 @@
     # ];
   };
   programs.zsh.enable = true; 
-  # Enable ld to run vscode-server
-  programs.nix-ld.enable = true;
   # $ nix search wget
   environment.systemPackages = with pkgs; [
       vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.

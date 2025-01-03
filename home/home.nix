@@ -11,6 +11,7 @@
     fastfetch
     firefox
     vscode
+    dconf
     # zsh
     zsh-powerlevel10k
     zsh-z
@@ -18,6 +19,7 @@
     #waybar
     rofi
     dunst
+    # theme
     bibata-cursors
     tokyo-night-gtk
     #libsForQt5.qt5.qtwayland
