@@ -3,6 +3,7 @@
   imports = [ 
     ./programs
     ./themes 
+    ./scripts 
   ];
   home.username = "alex";
   home.homeDirectory = "/home/alex";
