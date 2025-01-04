@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       # Dynamic libraries
       ./ld.nix
+      ./fonts.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
