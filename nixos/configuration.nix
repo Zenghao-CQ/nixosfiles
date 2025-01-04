@@ -55,32 +55,20 @@
       fcitx5-chinese-addons
     ];
   };
+
+  # Steam
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
-
-
-  # font
-  
-  fonts.fonts = with pkgs; [
-    # 基础字体包
-    noto-fonts
-    noto-fonts-cjk-sans    # 中日韩字体
-    noto-fonts-emoji  # emoji表情
-    nerdfonts    
-    twemoji-color-font
-    fira-code
-    fira-code-symbols
-    # 其他常用字体
-    fira-code         # 编程字体
-    source-han-sans   # 思源黑体
-    source-han-serif  # 思源宋体
-  ];
- 
- 
-
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true; 
