@@ -2,7 +2,7 @@
   imports = [
     ./dunst
     ./hypr
-    #./kitty
+    ./kitty
     ./rofi
     ./waybar
     ./zsh

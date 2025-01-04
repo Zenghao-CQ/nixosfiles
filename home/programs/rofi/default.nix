@@ -6,7 +6,7 @@
     theme = ./theme.rasi;
   };
 
-    home.file.".config/rofi/theme.rasi".source = ./theme.rasi;
-    home.file.".config/rofi/colors/dracula.rasi".source = ./colors/dracula.rasi;
-    home.file.".config/rofi/colors/catppuccin.rasi".source = ./colors/catppuccin.rasi;
+  home.file.".config/rofi/theme.rasi".source = ./theme.rasi;
+  home.file.".config/rofi/colors/dracula.rasi".source = ./colors/dracula.rasi;
+  home.file.".config/rofi/colors/catppuccin.rasi".source = ./colors/catppuccin.rasi;
 }
