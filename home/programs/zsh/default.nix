@@ -11,9 +11,21 @@
       ll = "ls -alF";
       n-purge = "nix-collect-garbage -d";
     };
-    #initExtra = ''
-    #  [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
-    #'';
+    initExtra = ''
+    proxy_on() {
+      export http_proxy="http://127.0.0.1:7890"
+      export https_proxy=$http_proxy
+      export socks5_proxy="socks5://127.0.0.1:7890"
+      echo "HTTP Proxy on"
+    }
+
+    proxy_off() {
+      unset http_proxy
+      unset https_proxy
+      unset socks5_proxy
+      echo "HTTP Proxy off"
+    }
+    '';
     plugins = [
       {
         name = "powerlevel10k";

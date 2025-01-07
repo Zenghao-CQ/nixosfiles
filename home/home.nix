@@ -19,7 +19,7 @@
     zsh-powerlevel10k
     zsh-z
     # hyprland
-    # waybar
+
     rofi
     dunst
     cava
