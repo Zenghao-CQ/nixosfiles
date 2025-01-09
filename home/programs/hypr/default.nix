@@ -22,6 +22,7 @@
       windowrule = pseudo, fcitx
       exec-once=fcitx5 -d -r
       exec-once=fcitx5-remote -r        
+      exec-once=hyprlock
  
       # Input config
       input {
@@ -99,7 +100,7 @@
       bind = $mainMod,Return,exec,kitty
       bind = $mainMod,Q,killactive,
       bind = $mainMod,M,exit,
-      #bind = $mainMod,L,exec,firefox 
+      bind = $mainMod,L,exec,hyprlock 
       bind = $mainMod, D, exec, rofi -show drun -show-icons # 应用程序启动器
       bind = $mainMod, R, exec, rofi -show run
 

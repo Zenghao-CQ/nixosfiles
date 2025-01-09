@@ -12,6 +12,7 @@
       ./ld.nix
       ./fonts.nix
       ./mihomo.nix
+      # ./greetd.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -118,7 +119,6 @@
       vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       git
-      # metacubexd
   ];
 
   environment.variables = {

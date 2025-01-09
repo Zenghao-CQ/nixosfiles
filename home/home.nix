@@ -14,12 +14,13 @@
   home.packages = with pkgs;[
     fastfetch
     firefox
+    microsoft-edge
     vscode
     dconf
     zsh-powerlevel10k
     zsh-z
     # hyprland
-
+    hyprlock
     rofi
     dunst
     cava
